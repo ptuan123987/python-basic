@@ -1,7 +1,20 @@
 def main():
-    aList = list(input("Enter text : ").split(" "));
-    word_count = {}
-    for i in aList:
-        word_count[i] =word_count.get(i,0) + 1;
-    print(word_count);
-main();
+    aList = list(input("Enter text : ").split(" "))
+    print(aList)
+
+    print(most_common(aList))
+
+
+def most_common(list):
+    counter = 0
+    word_common = list[0]
+    for i in list:
+        cur_frequency = list.count(i)
+        if (cur_frequency > counter):
+            counter = cur_frequency
+            word_common = i
+    return word_common
+
+
+
+main()
